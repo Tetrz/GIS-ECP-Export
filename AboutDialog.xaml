@@ -1,0 +1,103 @@
+﻿<Window x:Class="GIS_ECP_Export.AboutDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GIS_ECP_Export"
+        mc:Ignorable="d"
+        Title="О программе" 
+        Height="670" Width="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock TextWrapping="Wrap" FontSize="14">
+
+            <Run Text="ГИС ЕЦП Экспорт," FontWeight="Bold"/>
+            <Run Text="версия"/>
+            <Run Text="{x:Static local:AppInfo.Version}"/>
+
+            <LineBreak/>
+            <LineBreak/>
+
+            <Run Text="Программа автоматизирует процесс выгрузки запросов из ГИС ЕЦП, минимизируя участие пользователя."/>
+
+            <LineBreak/>
+
+            <TextBlock Margin="0,10,0,0">
+                <Run Text="Страница проекта на GitHub: " FontWeight="Bold"/>
+                <Hyperlink NavigateUri="https://github.com/Tetrz/GIS-ECP-Export"
+                           RequestNavigate="Hyperlink_RequestNavigate">
+                            перейти.
+                </Hyperlink>
+            </TextBlock>
+
+            <LineBreak/>
+            
+            <Run Text="Разработчик: " FontWeight="Bold"/>
+            <Run Text="Аршинов Алексей."/>
+            <LineBreak/>
+            <Run Text="Email: " FontWeight="Bold"/>
+            <Run Text="lexgroup707@gmail.com."/>
+            
+            <LineBreak/>
+            
+            <Run Text="Запросов скачано: " FontWeight="Bold"/>
+            <Run x:Name="LoadedQueriesCount"/>
+
+            <LineBreak/>
+            <LineBreak/>
+
+            <Run Text="Лицензия:" FontWeight="Bold"/>
+            <LineBreak/>
+            <Run Text="Данное программное обеспечение распространяется на условиях лицензии MIT."/>
+
+            <LineBreak/>
+            <LineBreak/>
+
+            <Run Text="Разрешается свободное использование, копирование, изменение и распространение программы при условии сохранения уведомления об авторских правах."/>
+
+            <LineBreak/>
+            <LineBreak/>
+
+            <Run Text="Программа предоставляется «как есть», без каких-либо гарантий."/>
+            <LineBreak/>
+            <Run Text="Автор не несёт ответственности за возможные последствия использования."/>
+
+            <LineBreak/>
+            <LineBreak/>
+
+            <Run Text="В программе используются компоненты третьих сторон:" FontWeight="Bold"/>
+            <LineBreak/>
+            <Run Text=".NET Framework, WPF, Selenium WebDriver, PDFsharp, NLog, FlaUI, Microsoft Windows API Code Pack, Newtonsoft.Json."/>
+
+            <LineBreak/>
+            <LineBreak/>
+
+            <Run Text="© 2026 Аршинов Алексей."/>
+
+        </TextBlock>
+
+        <!--<TextBlock TextWrapping="Wrap" Margin="0,0,0,10">ГИС ЕЦП Экспорт v <TextBlock Text="{x:Static local:AppInfo.Version}"/>
+           <LineBreak/> Разработчик: Аршинов Алексей.
+           <LineBreak/> Email: lexgroup707@gmail.com.
+           <LineBreak/>
+           <LineBreak/>В программе использованы следующие компоненты 3-х сторон: .Net Framework, DotNetSeleniumExtras.WaitHelpers, Newtonsoft.Json, PDFsharp, Selenium.Support, Selenium.WebDriver, WindowsAPICodePackShell, NLog.
+            <LineBreak/>
+            <LineBreak/>
+            <TextBlock Text="Запросов скачано: " Margin="0,0,0,10"/>
+        <TextBlock x:Name="LoadedQueriesCount" Margin="0,0,0,10"/>
+        </TextBlock>-->
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="OK" Width="75" Margin="0,20,0,0" FontSize="14" Click="Ok_Click"/>
+        </StackPanel>
+    </Grid>
+
+</Window>

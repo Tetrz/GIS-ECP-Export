@@ -1,0 +1,106 @@
+﻿<Window x:Class="GIS_ECP_Export.SettingsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GIS_ECP_Export"
+        mc:Ignorable="d"
+            Title="Настройки"
+        Height="580" Width="600"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" Height="300" >
+            <Button x:Name="OpenBrowserButton" FontSize="16" Content="Открыть браузер" Margin="0,0,0,10" Padding="4" Click="OpenBrowserButton_Click"/>
+            <Button x:Name="CloseBrowserButton" FontSize="16" Content="Закрыть браузер" Margin="0,0,0,0" Padding="4" Click="CloseBrowserButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Vertical">
+
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="AuthByPasswordRadioButton" FontSize="16" GroupName="AuthGroup" Content="Войти вручную" Click="AuthManuallyRadioButton_Click"  Margin="0,6,0,0"/>
+            </StackPanel>
+
+            <Border HorizontalAlignment="Left" BorderThickness="1" Margin="0,6,0,6" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Width="400"/>
+
+            <RadioButton x:Name="AuthByECPRadioButton"  FontSize="16" GroupName="AuthGroup" Content="Вход по электронной подписи (автоматизирован)" Click="AuthByECPRadioButton_Click"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                <TextBlock FontSize="16" Text="Выбрать подпись:"/>
+                <ComboBox x:Name="SelectSignComboBox" FontSize="16" Width="160" Margin="10,0,0,0" SelectionChanged="SelectSignComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Подпись 1" />
+                    <ComboBoxItem Content="Подпись 2" />
+                    <ComboBoxItem Content="Подпись 3" />
+                    <ComboBoxItem Content="Подпись 4" />
+                    <ComboBoxItem Content="Подпись 5" />
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                <TextBlock FontSize="16" Text="Пин-код:"/>
+                <PasswordBox x:Name="PinCodePasswordBox"  FontSize="16" Width="160" Margin="10,0,0,0" PasswordChanged="PinCodePasswordBox_PasswordChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                <TextBlock FontSize="16" Text="Войти как:"/>
+                <ComboBox x:Name="LoginAsComboBox" FontSize="16" Width="160" Margin="10,0,0,0" SelectionChanged="LoginAsComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Организация 1" />
+                    <ComboBoxItem Content="Организация 2" />
+                    <ComboBoxItem Content="Организация 3" />
+                    <ComboBoxItem Content="Организация 4" />
+                    <ComboBoxItem Content="Организация 5" />
+                </ComboBox>
+            </StackPanel>
+
+            <Border BorderThickness="1" Margin="0,6,0,0" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" />
+
+            <TextBlock FontSize="16" Text="Путь к папке для сохранения запросов:" Margin="0,6,0,0"/>
+            <StackPanel Orientation="Horizontal" Height="26" HorizontalAlignment="Left" Margin="0,6,0,0">
+                <TextBlock x:Name="PathTextBlock" FontSize="16" Height="20" VerticalAlignment="Center" Padding="5,0,5,0" Width="180" Background="#FFEEEEEE" />
+                <Button Margin="20,0,0,0" FontSize="16" Content="Обзор" Click="SelectRequestsPathButton_Click" Width="100" />
+            </StackPanel>
+
+            <Border BorderThickness="1" Margin="0,6,0,6" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}"/>
+
+            <CheckBox x:Name="DownloadOnStartCheckBox" FontSize="16" Content="Экспортировать запросы при старте приложения" Click="DownloadOnStartCheckBox_Click" Margin="0,6,0,0"/>
+
+            <CheckBox x:Name="AutoExitGISECPCheckBox"  Click="AutoExitGISECPCheckBox_Click" Margin="0,6,0,0">
+                <TextBlock FontSize="16" TextWrapping="Wrap" Text="Выходить из ГИС ЕЦП по завершении скачивания запросов" />
+            </CheckBox>
+
+            <CheckBox x:Name="AutoCloseAppCheckBox"  Click="AutoCloseAppCheckBox_Click" Margin="0,6,0,0">
+                <TextBlock FontSize="16" TextWrapping="Wrap" Text="Закрывать приложение после скачивания запросов" />
+            </CheckBox>
+
+            <CheckBox x:Name="HideConsoleCheckBox" FontSize="16" Content="Скрывать консоль с выводом отладочных данных" Click="HideConsoleCheckBox_Click" Margin="0,6,0,0" />
+
+            <CheckBox x:Name="OpenFolderCheckBox" FontSize="16" Click="OpenFolderCheckBox_Click" Margin="0,6,0,0" Content="Открыть папку с запросами по завершении их скачивания" />
+
+            <Border BorderThickness="1" Margin="0,6,0,6" BorderBrush="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}"/>
+            
+            <CheckBox x:Name="LogCheckBox" FontSize="16" Click="LogCheckBox_Click" Margin="0,6,0,0" Content="Логирование событий" />
+
+            <CheckBox x:Name="ScreenshotCreateCheckBox" FontSize="16" Click="ScreenshotCreateCheckBox_Click" Margin="0,6,0,0" Content="Сохранять скриншоты" />
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Margin="0,30,0,0" Height="26" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button FontSize="16" Content="Сохранить" Height="26" Width="100" Margin="0,0,10,0" Click="Ok_Click"/>
+            <Button FontSize="16" Content="Отмена" Height="26" Width="100" Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+
+</Window>

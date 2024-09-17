@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11723.231
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GIS_ECP_Export", "GIS_ECP_Export.csproj", "{2611FA6B-1858-45C9-B3B7-3E7BB1C8E224}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C39A6A4-7760-415D-A971-AC7539097212}"
+	ProjectSection(SolutionItems) = preProject
+		NLog.config = NLog.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{C1904343-75F4-4A77-A829-3FB72016093A}"
+	ProjectSection(SolutionItems) = preProject
+		MainWindow.Private.cs = MainWindow.Private.cs
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2611FA6B-1858-45C9-B3B7-3E7BB1C8E224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2611FA6B-1858-45C9-B3B7-3E7BB1C8E224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2611FA6B-1858-45C9-B3B7-3E7BB1C8E224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2611FA6B-1858-45C9-B3B7-3E7BB1C8E224}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCA78C9E-1349-4380-8DD0-493706FDD3D5}
+	EndGlobalSection
+EndGlobal
