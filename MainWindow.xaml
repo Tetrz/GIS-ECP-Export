@@ -34,7 +34,7 @@
             <Button HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.019,-1.701" Margin="0,20,10,0" Padding="4" Click="Help_Button_Click" FontFamily="pack://application:,,,/Res/#Segoe MDL2 Assets" FontSize="24" FontWeight="Bold" Content="&#xE897;"   ToolTip="Справка"/>
             <Button HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.019,-1.701" Margin="0,20,10,0" Padding="4" Click="About_Button_Click" FontFamily="pack://application:,,,/Res/#Segoe MDL2 Assets" FontSize="24" FontWeight="Bold" Content="&#xE946;" ToolTip="О программе"/>
             <Button HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.019,-1.701" Margin="0,20,10,0" Padding="4" ToolTip="Поддержать проект">
-                <Hyperlink NavigateUri="https://github.com/Tetrz/GIS-ECP-Export#❤️-Поддержать-проект"
+                <Hyperlink NavigateUri="https://github.com/Tetrz/GIS-ECP-Export#-%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82"
            RequestNavigate="Donate_Button_Click" FontSize="18" FontWeight="Bold" Foreground="#c81503" TextDecorations="None" >❤</Hyperlink>
             </Button>
         </StackPanel>
